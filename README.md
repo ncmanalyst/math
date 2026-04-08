@@ -2,18 +2,18 @@
 
 Math es una colección de juegos educativos interactivos diseñados para reforzar conceptos matemáticos fundamentales en niveles de educación primaria y secundaria. Cada juego combina mecánicas atractivas con ejercicios progresivos de aritmética, álgebra, geometría y resolución de problemas, promoviendo el aprendizaje autónomo y la práctica gamificada.
 
-## 🎯 Propósito
+## Propósito
 Fomentar el pensamiento lógico-matemático a través del juego, ofreciendo una herramienta de apoyo para docentes y un recurso de autoaprendizaje para estudiantes.
 
-## 🕹️ Juegos incluidos
+## Juegos incluidos
 - 
 
-## 🛠️ Tecnologías
+## Tecnologías
 - HTML5 / CSS3 / JavaScript (Vanilla y Canvas)
 - Phaser 3 (framework para juegos)
 - JSON para niveles y progresión
 
-## 📦 Cómo usar
+## Cómo usar
 1. Clonar el repositorio  
    `git clone https://github.com/ncmanalyst/math.git`
 2. Abrir `index.html` en cualquier navegador moderno.
