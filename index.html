@@ -31,7 +31,6 @@
     position: relative;
   }
 
-  /* === STARS BACKGROUND === */
   .stars {
     position: fixed; inset: 0; pointer-events: none; z-index: 0;
     overflow: hidden;
@@ -47,7 +46,6 @@
     to   { opacity: 0.9; transform: scale(1.2); }
   }
 
-  /* === FLOATING SHAPES === */
   .floater {
     position: fixed; pointer-events: none; z-index: 0;
     font-size: 2.5rem;
@@ -58,15 +56,13 @@
     from { transform: translateY(0) rotate(0deg); }
     to   { transform: translateY(-30px) rotate(15deg); }
   }
-
-  /* === LAYOUT === */
+  
   #app {
     position: relative; z-index: 1;
     max-width: 700px; margin: 0 auto;
     padding: 24px 16px 80px;
   }
 
-  /* === HEADER === */
   header {
     text-align: center; padding: 28px 0 12px;
   }
@@ -83,7 +79,6 @@
     font-size: 1rem; color: #94a3b8; margin-top: 4px; font-weight: 600;
   }
 
-  /* === STATS BAR === */
   .stats {
     display: flex; gap: 12px; margin: 20px 0;
     justify-content: center; flex-wrap: wrap;
@@ -106,7 +101,6 @@
     50%      { transform: scale(1.25); }
   }
 
-  /* === LEVEL SELECTOR === */
   .section-title {
     font-family: 'Fredoka One', cursive;
     font-size: 1.3rem; color: #e2e8f0;
@@ -132,7 +126,6 @@
   .level-btn.active { border-color: var(--sun); background: rgba(251,191,36,0.18); box-shadow: 0 0 20px rgba(251,191,36,0.35); }
   .level-btn .lv-icon { font-size: 2rem; display: block; margin-bottom: 6px; }
 
-  /* === QUESTION CARD === */
   .question-card {
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
     border: 1px solid rgba(255,255,255,0.15);
@@ -179,7 +172,6 @@
     font-size: 0.9rem; color: #64748b; margin-bottom: 24px; font-weight: 600;
   }
 
-  /* === VISUAL AIDS (emojis as counting objects) === */
   .visual-aid {
     display: flex; flex-wrap: wrap; justify-content: center;
     gap: 6px; margin: 0 auto 20px; max-width: 360px; min-height: 40px;
@@ -191,7 +183,6 @@
     to   { opacity: 1; transform: scale(1); }
   }
 
-  /* === ANSWERS GRID === */
   .answers {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -247,7 +238,6 @@
     80%      { transform: translateX(5px); }
   }
 
-  /* === FEEDBACK OVERLAY === */
   .feedback {
     position: fixed; inset: 0; z-index: 100;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -267,7 +257,6 @@
   }
   .feedback-emoji { font-size: 4rem; margin-bottom: 8px; }
 
-  /* === PROGRESS BAR === */
   .progress-wrap {
     background: rgba(255,255,255,0.08);
     border-radius: 50px; height: 10px;
@@ -284,7 +273,6 @@
     font-size: 0.78rem; color: #64748b; text-align: right; font-weight: 700;
   }
 
-  /* === CONFETTI === */
   .confetti-piece {
     position: fixed; width: 10px; height: 10px;
     border-radius: 2px; pointer-events: none; z-index: 200;
@@ -295,7 +283,6 @@
     100% { transform: translateY(110vh) rotate(720deg) scale(0.5); opacity: 0; }
   }
 
-  /* === GAME OVER / WIN SCREEN === */
   .end-screen {
     display: none; text-align: center; padding: 40px 24px;
     animation: cardIn 0.6s cubic-bezier(0.34,1.56,0.64,1);
@@ -323,7 +310,6 @@
   .btn-primary:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 32px rgba(167,139,250,0.5); }
   .btn-primary:active { transform: scale(0.97); }
 
-  /* === TIMER === */
   .timer-ring {
     display: flex; align-items: center; justify-content: center;
     gap: 6px; margin: 0 auto 16px;
@@ -344,7 +330,6 @@
     color: var(--sun);
   }
 
-  /* === RESPONSIVE === */
   @media (max-width: 420px) {
     .question-text { font-size: 2.5rem; }
     .answer-btn { font-size: 1.5rem; padding: 14px 8px; }
@@ -353,17 +338,14 @@
 </head>
 <body>
 
-<!-- Starfield -->
 <div class="stars" id="stars"></div>
 
-<!-- Floating decorative emojis -->
 <div class="floater" style="top:8%;left:4%;--spd:5s">🌙</div>
 <div class="floater" style="top:20%;right:6%;--spd:7s">⭐</div>
 <div class="floater" style="top:60%;left:2%;--spd:9s">🪐</div>
 <div class="floater" style="top:75%;right:3%;--spd:6s">🌈</div>
 <div class="floater" style="top:45%;left:90%;--spd:8s">✨</div>
 
-<!-- Main App -->
 <div id="app">
 
   <header>
@@ -371,14 +353,12 @@
     <div class="subtitle">¡Aprende matemáticas jugando!</div>
   </header>
 
-  <!-- Stats -->
   <div class="stats">
     <div class="stat-chip lives"><span class="icon">❤️</span> <span id="livesDisplay">3</span></div>
     <div class="stat-chip"><span class="icon">⭐</span> <span id="scoreDisplay">0</span> pts</div>
     <div class="stat-chip"><span class="icon">🏆</span> <span id="levelDisplay">Nivel 1</span></div>
   </div>
 
-  <!-- Level selector -->
   <div id="levelSelector">
     <div class="section-title">¿Qué quieres aprender hoy?</div>
     <div class="level-grid">
@@ -406,20 +386,17 @@
     </div>
   </div>
 
-  <!-- Game Area -->
   <div id="gameArea" style="display:none">
-    <!-- Progress -->
+    PROGRESO
     <div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
     <div class="progress-label" id="progressLabel">0 / 10</div>
 
-    <!-- Timer -->
     <div class="timer-ring" style="margin-top:10px">
       <span style="font-size:1rem">⏱️</span>
       <div class="timer-bar-wrap"><div class="timer-bar" id="timerBar"></div></div>
       <span class="timer-num" id="timerNum">10</span>
     </div>
 
-    <!-- Question card -->
     <div class="question-card" id="questionCard">
       <div class="card-glow"></div>
       <span class="operation-icon" id="opIcon">➕</span>
@@ -430,7 +407,6 @@
     </div>
   </div>
 
-  <!-- End Screen -->
   <div class="end-screen" id="endScreen">
     <span class="big-emoji" id="endEmoji">🎉</span>
     <h2 id="endTitle">¡Increíble!</h2>
@@ -445,16 +421,13 @@
 
 </div>
 
-<!-- Feedback overlay -->
 <div class="feedback" id="feedback">
   <div class="feedback-emoji" id="feedbackEmoji"></div>
   <div class="feedback-text" id="feedbackText"></div>
 </div>
 
 <script>
-// =====================
-// CONFIG
-// =====================
+
 const TOTAL_QUESTIONS = 10;
 const TIMER_SECS = { 1: 12, 2: 9, 3: 6 };
 const EMOJIS_PER_THEME = ['🍎','🌟','🐱','🦋','🍕','🎈','🐶','🌸','🍦','🎮','🚀','🦄'];
@@ -464,9 +437,6 @@ let score = 0, lives = 3, questionIndex = 0;
 let currentAnswer = 0, timerInterval = null, timerLeft = 10;
 let answered = false;
 
-// =====================
-// STARS
-// =====================
 (function createStars(){
   const c = document.getElementById('stars');
   for(let i = 0; i < 80; i++){
@@ -478,9 +448,6 @@ let answered = false;
   }
 })();
 
-// =====================
-// MENU SETTERS
-// =====================
 function setMode(m, btn){
   mode = m;
   document.querySelectorAll('#levelSelector .level-grid:first-of-type .level-btn').forEach(b=>b.classList.remove('active'));
@@ -493,9 +460,6 @@ function setDiff(d, btn){
   document.getElementById('levelDisplay').textContent = `Nivel ${d}`;
 }
 
-// =====================
-// GAME FLOW
-// =====================
 function startGame(){
   score = 0; lives = 3; questionIndex = 0;
   updateStats();
@@ -512,9 +476,6 @@ function backToMenu(){
   document.getElementById('levelSelector').style.display = 'block';
 }
 
-// =====================
-// QUESTION GENERATION
-// =====================
 function getQuestion(){
   const ops = mode === 'mix' ? ['add','sub','mul'] : [mode];
   const op = ops[Math.floor(Math.random()*ops.length)];
@@ -550,9 +511,6 @@ function generateOptions(answer){
   return [...opts].sort(() => Math.random()-0.5);
 }
 
-// =====================
-// RENDER QUESTION
-// =====================
 function nextQuestion(){
   if(questionIndex >= TOTAL_QUESTIONS){ endGame(); return; }
   answered = false;
@@ -606,9 +564,6 @@ function nextQuestion(){
   startTimer();
 }
 
-// =====================
-// TIMER
-// =====================
 function startTimer(){
   clearInterval(timerInterval);
   timerLeft = TIMER_SECS[difficulty];
@@ -640,9 +595,6 @@ function timeOut(){
   setTimeout(()=>{ questionIndex++; nextQuestion(); }, 1800);
 }
 
-// =====================
-// ANSWER CHECK
-// =====================
 function checkAnswer(val, btn){
   if(answered) return;
   answered = true;
@@ -683,9 +635,6 @@ function loseLife(){
   if(lives <= 0){ clearInterval(timerInterval); setTimeout(endGame, 1800); }
 }
 
-// =====================
-// FEEDBACK
-// =====================
 function showFeedback(emoji, text, good){
   const f = document.getElementById('feedback');
   document.getElementById('feedbackEmoji').textContent = emoji;
@@ -696,9 +645,6 @@ function showFeedback(emoji, text, good){
   setTimeout(()=>f.classList.remove('show'), 1200);
 }
 
-// =====================
-// CONFETTI
-// =====================
 function launchConfetti(){
   const colors = ['#fbbf24','#34d399','#60a5fa','#f472b6','#a78bfa','#f87171'];
   for(let i=0;i<28;i++){
@@ -715,9 +661,6 @@ function launchConfetti(){
   }
 }
 
-// =====================
-// END GAME
-// =====================
 function endGame(){
   clearInterval(timerInterval);
   document.getElementById('gameArea').style.display = 'none';
@@ -735,9 +678,6 @@ function endGame(){
   if(won) launchConfetti();
 }
 
-// =====================
-// HELPERS
-// =====================
 function updateStats(){
   document.getElementById('livesDisplay').textContent = '❤️'.repeat(lives) || '💔';
   document.getElementById('scoreDisplay').textContent = score;
